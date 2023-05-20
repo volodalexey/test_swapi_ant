@@ -1,19 +1,26 @@
-import React, { useState, type ReactNode, type ReactElement } from 'react'
+import React, { type ReactNode, type ReactElement } from 'react'
 import { Button, FloatButton, Layout, Row, Col, Affix } from 'antd'
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined
 } from '@ant-design/icons'
 import { SiderMenu } from '../components/Menu'
+import { useDispatch, useSelector } from 'react-redux'
+import { type RootState } from '../redux-functionality/store'
+import { type InitialMenuState } from '../redux-functionality/menu-type'
+import { setCollapsed } from '../redux-functionality/slices/menu-slice'
 
 const { Header, Sider, Content } = Layout
 const { BackTop } = FloatButton
 
 export function MenuAndHeaderLayout ({ headerCenter, contentMain }: { headerCenter: ReactNode, contentMain: ReactNode }): ReactElement {
-  const [collapsed, setCollapsed] = useState(false)
+  const { collapsed } = useSelector<RootState, InitialMenuState>(
+    (state) => state.menuReducer
+  )
+  const dispatch = useDispatch()
 
   function onClick (): void {
-    setCollapsed(!collapsed)
+    dispatch(setCollapsed(!collapsed))
   }
 
   const siderWidthCollapsed = 0
