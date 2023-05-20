@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "build": "WEBPACK_ENV=production webpack",
-    "build-github": "WEBPACK_ENV=production webpack --define process.env.HASH_ROUTER='\"true\"'",
+    "build-github": "WEBPACK_ENV=production HASH_ROUTER=true webpack",
     "serve": "WEBPACK_ENV=development webpack serve"
   },
   "keywords": [],
