@@ -28,4 +28,4 @@ npm i
 npm run serve
 ```
 
-## Open browser at [http://localhost:9119](http://localhost:9119)
+## Local: Open browser at [http://localhost:9119](http://localhost:9119)

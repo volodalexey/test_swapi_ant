@@ -1,5 +1,6 @@
 const path = require('node:path')
 
+const { DefinePlugin } = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const isProduction = process.env.WEBPACK_ENV === 'production'
@@ -46,6 +47,9 @@ module.exports = {
       favicon: './src/favicon.ico',
       filename: 'index.html',
       minify: isProduction
+    }),
+    new DefinePlugin({
+      'process.env.HASH_ROUTER': JSON.stringify(process.env.HASH_ROUTER || 'false')
     })
   ],
   devServer: {

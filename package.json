@@ -1,10 +1,12 @@
 {
   "name": "test_swapi_ant",
+  "homepage": "https://volodalexey.github.io/test_swapi_ant",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "WEBPACK_ENV=production webpack",
+    "build-github": "WEBPACK_ENV=production webpack --define process.env.HASH_ROUTER='\"true\"'",
     "serve": "WEBPACK_ENV=development webpack serve"
   },
   "keywords": [],
