@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { FULL_CLIENT_PATH } from '../../routes/client-path'
 import { extractItemId } from '../../helpers/parse'
 import { CreatedEdited } from '../CreatedEdited'
+import { ViewLink } from '../ViewLink'
 
 const { Meta } = Card
 const { Item } = Descriptions
@@ -49,9 +50,7 @@ export function SpeciesListItem ({
         <br />
         <Descriptions column={1}>
           <Item label="Homeworld">
-            <Link to={`${FULL_CLIENT_PATH.planetsView$}/${extractItemId(homeworld)}`}>
-              {homeworld}
-            </Link>
+            <ViewLink prepend={FULL_CLIENT_PATH.planetsView$} initialUrl={homeworld} text={homeworld} />
           </Item>
         </Descriptions>
         <CreatedEdited created={created} edited={edited} />

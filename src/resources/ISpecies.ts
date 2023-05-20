@@ -7,7 +7,7 @@ export interface ISpecies {
   edited: string
   eye_colors: string
   hair_colors: string
-  homeworld: string
+  homeworld: string | null
   language: string
   name: string
   people: string[]

@@ -1,14 +1,14 @@
 import React, { type ReactElement } from 'react'
 import { type IPeople } from '../../resources/IPeople'
 import { Alert, Card, Collapse, Descriptions, Row, Skeleton } from 'antd'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { logRouteParams, logViewData } from '../../helpers/logger'
 import { useViewQuery } from '../../helpers/queries'
 import { getFilmsPanel, getSpeciesPanel, getStarshipsPanel, getVehiclesPanel } from '../collapse/panels'
 import { type ResourceType } from '../../resources/Resources'
 import { FULL_CLIENT_PATH } from '../../routes/client-path'
-import { extractItemId } from '../../helpers/parse'
 import { CreatedEdited } from '../CreatedEdited'
+import { ViewLink } from '../ViewLink'
 
 const { Item } = Descriptions
 
@@ -55,9 +55,7 @@ export function PeopleView (): ReactElement {
         <br />
         <Descriptions column={1}>
           <Item label="Homeworld">
-            <Link to={`${FULL_CLIENT_PATH.planetsView$}/${extractItemId(homeworld)}`}>
-              {homeworld}
-            </Link>
+            <ViewLink prepend={FULL_CLIENT_PATH.planetsView$} initialUrl={homeworld} text={homeworld} />
           </Item>
         </Descriptions>
         <CreatedEdited created={created} edited={edited} />

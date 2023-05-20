@@ -4,6 +4,7 @@ const { DefinePlugin } = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const isProduction = process.env.WEBPACK_ENV === 'production'
+const isHashRouter = process.env.HASH_ROUTER === 'true'
 const port = process.env.PORT ?? 9119
 
 module.exports = {
@@ -15,6 +16,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, './dist'),
+    publicPath: isHashRouter ? undefined : '/',
     clean: true
   },
   module: {
