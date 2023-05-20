@@ -1,6 +1,6 @@
 # [DEMO](https://volodalexey.github.io/test_swapi_ant/)
 
-## Task: Make SPA React+TypeScript using (Star Wars API)[https://swapi.dev/]
+## Task: Make SPA React+TypeScript using [Star Wars API](https://swapi.dev/)
 
 - consist of 2 pages
 - 1st (main) page:
