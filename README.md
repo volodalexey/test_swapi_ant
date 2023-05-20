@@ -9,6 +9,7 @@
 - 2nd page:
     - detailed view of character
 
+Additional tasks:
 - use accurate layout
 - use Redux
 - edit character locally
