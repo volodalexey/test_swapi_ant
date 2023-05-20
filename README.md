@@ -1,4 +1,4 @@
-# [DEMO](https://volodalexey.github.io/test_swapi_ant/)
+# [DEMO](https://volodalexey.github.io/test_swapi_ant)
 
 ## Task: Make SPA React+TypeScript using [Star Wars API](https://swapi.dev/)
 
